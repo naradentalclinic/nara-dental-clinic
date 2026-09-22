@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderMinimal from '../components/HeaderMinimal.astro';
+import HeroSingleCta from '../components/HeroSingleCta.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import FacilitySection from '../components/FacilitySection.astro';
+import TreatmentResultsSection from '../components/TreatmentResultsSection.astro';
+import LocationSection from '../components/LocationSection.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsapp from '../components/FloatingWhatsapp.astro';
+---
+
+<Layout
+  title="Klinik & Dokter Gigi Terdekat di Surabaya | Nara Dental Care"
+  description="Cari dokter gigi terdekat di Surabaya? Nara Dental Care menyediakan perawatan gigi umum & spesialis lengkap dengan fasilitas modern dan lokasi strategis di Gubeng Surabaya."
+>
+  <!-- Minimal Header: Logo di tengah tanpa navbar menu -->
+  <HeaderMinimal />
+
+  <main>
+    <!-- 1. Single Hero Header dengan 1 CTA ke WhatsApp -->
+    <HeroSingleCta />
+    
+    <!-- 2. Layanan -->
+    <ServicesGrid />
+
+    <!-- 3. Fasilitas -->
+    <FacilitySection />
+
+    <!-- 4. Before - After (Hasil Perawatan) -->
+    <TreatmentResultsSection />
+
+    <!-- 5. Call To Action Map & WhatsApp (Lokasi Klinik) -->
+    <LocationSection />
+  </main>
+
+  <Footer />
+  <FloatingWhatsapp />
+</Layout>

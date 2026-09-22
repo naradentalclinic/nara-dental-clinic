@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import HeroSlider from '../components/HeroSlider.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import KeunggulanSection from '../components/KeunggulanSection.astro';
+import DoctorTeam from '../components/DoctorTeam.astro';
+import FacilitySection from '../components/FacilitySection.astro';
+import TreatmentResultsSection from '../components/TreatmentResultsSection.astro';
+import ReviewsSection from '../components/ReviewsSection.astro';
+import LocationSection from '../components/LocationSection.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsapp from '../components/FloatingWhatsapp.astro';
+---
+
+<Layout
+  title="Nara Dental Clinic Surabaya | Klinik Dokter Gigi Spesialis & Umum Terpercaya"
+  description="Nara Dental Clinic - Your smiles matters. Perawatan gigi profesional, nyaman, dan transparan di Gubeng, Surabaya. Didukung tim dokter spesialis berpengalaman & peralatan modern."
+>
+  <Header />
+  <main>
+    <!-- Section 1: Hero Banner -->
+    <HeroSlider />
+    
+    <!-- Section 2: Layanan (Compact 1-Line Looping Slider) -->
+    <ServicesGrid />
+
+    <!-- Section 3: Keunggulan Utama Nara Dental -->
+    <KeunggulanSection />
+
+    <!-- Section 4: Tim Dokter Spesialis & Umum -->
+    <DoctorTeam />
+
+    <!-- Section 5: Fasilitas Klinik -->
+    <FacilitySection />
+
+    <!-- Section 6: Hasil Perawatan (Before - After) -->
+    <TreatmentResultsSection />
+
+    <!-- Section 7: Ulasan & Google Reviews (1 Baris 3 Kartu) -->
+    <ReviewsSection />
+
+    <!-- Section 8: Peta Google Maps & Lokasi Klinik -->
+    <LocationSection />
+  </main>
+  <Footer />
+  <FloatingWhatsapp />
+</Layout>

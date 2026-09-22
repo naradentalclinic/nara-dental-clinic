@@ -1,0 +1,28 @@
+---
+const waNumber = "6281235887859";
+const defaultText = encodeURIComponent("Halo Nara Dental Clinic, saya ingin bertanya dan reservasi jadwal perawatan gigi.");
+const waUrl = `https://wa.me/${waNumber}?text=${defaultText}`;
+---
+
+<div class="fixed bottom-6 right-6 z-50 animate-float">
+  <a
+    href={waUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat WhatsApp Nara Dental Clinic"
+    class="group relative flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-2xl hover:scale-110 transition-all duration-300 ring-4 ring-emerald-300/40"
+  >
+    <!-- Tooltip -->
+    <span class="absolute right-16 top-1/2 -translate-y-1/2 whitespace-nowrap bg-nara-900 text-white text-xs font-bold px-3 py-1.5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg pointer-events-none">
+      Reservasi WhatsApp Nara Dental 💬
+    </span>
+
+    <!-- WA Icon SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.002 3.66 3.745-.983z"/>
+    </svg>
+
+    <!-- Pulse Ping Ring -->
+    <span class="absolute inset-0 rounded-full bg-emerald-400 opacity-75 animate-ping -z-10"></span>
+  </a>
+</div>

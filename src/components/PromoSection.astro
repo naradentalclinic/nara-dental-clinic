@@ -1,0 +1,80 @@
+---
+const promos = [
+  {
+    title: "Smile Level Up Promo — Scaling + Dental Spa",
+    subtitle: "Dapatkan pembersihan karang gigi menyeluruh + bonus vitamin perlindungan enamel gigi",
+    badge: "Special Month Offer",
+    discount: "Hemat Hingga 25%",
+    ctaText: "Klaim Promo Scaling via WA",
+    ctaLink: "https://wa.me/6281235887859?text=Halo%20Nara%20Dental,%20saya%20ingin%20klaim%20Promo%20Scaling%20%2B%20Dental%20Spa."
+  },
+  {
+    title: "Konsultasi & Cetak Behel Spesialis",
+    subtitle: "Dapatkan paket konsultasi behel bersama Dokter Spesialis Ortodonti & gratis rincian rencana perawatan",
+    badge: "Promo Behel Gigi",
+    discount: "Cicilan 0% Tersedia",
+    ctaText: "Klaim Promo Behel via WA",
+    ctaLink: "https://wa.me/6281235887859?text=Halo%20Nara%20Dental,%20saya%20ingin%20tanya%20detail%20Promo%20Konsultasi%20%26%20Pemasangan%20Behel."
+  }
+];
+---
+
+<section id="promo" class="py-16 lg:py-20 bg-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-nara-100 text-nara-700 mb-3">
+        <span class="w-2 h-2 rounded-full bg-nara-600"></span>
+        Penawaran Terbatas
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-nara-900 tracking-tight">
+        Promo Spesial Nara Dental
+      </h2>
+      <p class="text-nara-900/75 text-base mt-2">
+        Manfaatkan penawaran terbatas untuk perawatan gigi berkualitas tinggi dengan harga transparan.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {promos.map((p) => (
+        <div class="bg-gradient-to-br from-nara-50 to-nara-100/70 rounded-3xl p-8 border border-nara-200 shadow-md hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
+          
+          <!-- Top Tag -->
+          <div class="flex items-center justify-between mb-6">
+            <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-nara-600 text-white uppercase tracking-wider">
+              {p.badge}
+            </span>
+            <span class="text-xs font-bold text-nara-800 bg-white px-3 py-1 rounded-full shadow-xs border border-nara-200">
+              {p.discount}
+            </span>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-extrabold text-nara-900 mb-3 group-hover:text-nara-700 transition-colors">
+              {p.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-nara-900/80 leading-relaxed mb-8">
+              {p.subtitle}
+            </p>
+          </div>
+
+          <div>
+            <a
+              href={p.ctaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-bold text-sm text-white bg-nara-700 hover:bg-nara-800 shadow-md transition-all"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.002 3.66 3.745-.983z"/>
+              </svg>
+              {p.ctaText}
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

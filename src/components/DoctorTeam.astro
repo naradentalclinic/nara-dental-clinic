@@ -1,0 +1,169 @@
+---
+const doctors = [
+  {
+    name: "drg. Dian Tamara Joanita, Sp.KG",
+    role: "Spesialis Konservasi Gigi",
+    subrole: "Estetika & Perawatan Saluran Akar",
+    desc: "Fokus pada penyelamatkan gigi asli, penambalan estetis lanjutan, serta perawatan saluran akar gigi yang presisi dan minim rasa sakit.",
+    image: "/images/drg dian tamara.jpg",
+    badge: "Spesialis Konservasi"
+  },
+  {
+    name: "drg. Sonya Liani Ramadayanti, M. HKes., Sp.Ort",
+    role: "Spesialis Ortodonti",
+    subrole: "Kawat Gigi (Behel) & Aligner",
+    desc: "Ahli merapikan susunan gigi dan gigitan menggunakan behel konvensional, behel estetis, maupun aligner transparan.",
+    image: "/images/drg sonya liani.jpg",
+    badge: "Spesialis Ortodonti"
+  },
+  {
+    name: "drg. Nike Puji Rahmawati, Sp.Pros",
+    role: "Spesialis Prostodonsia",
+    subrole: "Gigi Palsu & Rehabilitasi Estetik",
+    desc: "Spesialis pembuatan gigi tiruan lepasan maupun permanen untuk memulihkan fungsi kunyah dan estetika wajah secara alami.",
+    image: "/images/drg nike puji.jpg",
+    badge: "Spesialis Prostodonsia"
+  },
+  {
+    name: "drg. Frida Chusna Achirularofa, Sp.KGA",
+    role: "Spesialis Kedokteran Gigi Anak",
+    subrole: "Perawatan & Edukasi Gigi Anak",
+    desc: "Berpendekatan ramah, edukatif, dan menyenangkan khusus untuk anak-anak, berfokus pada tindakan pencegahan sejak dini.",
+    image: "/images/drg frida chusna.PNG",
+    badge: "Spesialis Gigi Anak"
+  },
+  {
+    name: "drg. Bertha Nevira Wintari",
+    role: "Dokter Gigi Umum",
+    subrole: "Pemeriksaan Rutin & Dental Care",
+    desc: "Melayani pemeriksaan menyeluruh, scaling karang gigi, dental spa, dan penanganan kesehatan rongga mulut harian keluarga.",
+    image: "/images/drg bertha nevira.jpg",
+    badge: "Dokter Gigi Umum"
+  }
+];
+
+// Duplicate doctor array for seamless 100% infinite looping carousel
+const doubleDoctors = [...doctors, ...doctors];
+---
+
+<section id="dokter" class="py-16 lg:py-24 bg-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div class="max-w-2xl">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-nara-100 text-nara-700 mb-3">
+          <span class="w-2 h-2 rounded-full bg-nara-600"></span>
+          Tim Medis Professional
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-nara-900 tracking-tight">
+          Tim Dokter Gigi Spesialis & Umum
+        </h2>
+        <p class="text-nara-900/75 text-base mt-2">
+          Didukung tim dokter yang berpengalaman, ramah, dan memprioritaskan kenyamanan serta transparansi edukasi bagi pasien.
+        </p>
+      </div>
+
+      <div>
+        <a
+          href="https://wa.me/6281235887859?text=Halo%20Nara%20Dental,%20saya%20ingin%20tanya%20jadwal%20konsultasi%20dokter."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-bold text-nara-900 bg-nara-100 hover:bg-nara-200 transition-colors shadow-xs"
+        >
+          Konsultasi Jadwal Dokter
+          <svg class="w-4 h-4 text-nara-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Single-Line Auto-Sliding Infinite Loop Carousel -->
+  <div class="relative w-full overflow-hidden py-4">
+    
+    <!-- Left & Right Gradient Shadows -->
+    <div class="absolute top-0 bottom-0 left-0 w-16 lg:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute top-0 bottom-0 right-0 w-16 lg:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+    <!-- Scrolling Track -->
+    <div class="doctor-marquee-track">
+      {doubleDoctors.map((doc) => (
+        <div class="w-[320px] sm:w-[350px] bg-nara-50/70 rounded-3xl overflow-hidden border border-nara-100 hover:border-nara-300 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group shrink-0">
+          
+          <div>
+            <!-- Uniform Aspect Ratio Photo Frame (4:5 Portrait) -->
+            <div class="relative w-full aspect-[4/5] overflow-hidden bg-nara-100 border-b border-nara-200/60">
+              <img
+                src={doc.image}
+                alt={doc.name}
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-nara-900/80 via-nara-900/10 to-transparent"></div>
+              
+              <!-- Badge -->
+              <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wide bg-white/95 text-nara-800 backdrop-blur-md shadow-sm border border-nara-200/60">
+                {doc.badge}
+              </span>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-6">
+              <h3 class="font-extrabold text-lg sm:text-xl text-nara-900 group-hover:text-nara-700 transition-colors leading-snug">
+                {doc.name}
+              </h3>
+              <p class="text-xs font-bold text-nara-600 uppercase tracking-wide mt-1">
+                {doc.role}
+              </p>
+              <p class="text-xs font-medium text-nara-900/60 italic mb-3">
+                {doc.subrole}
+              </p>
+              <p class="text-xs sm:text-sm text-nara-900/75 leading-relaxed">
+                {doc.desc}
+              </p>
+            </div>
+          </div>
+
+          <!-- Doctor Booking CTA Button -->
+          <div class="p-6 pt-0">
+            <a
+              href={`https://wa.me/6281235887859?text=Halo%20Nara%20Dental,%20saya%20ingin%20membuat%20janji%20temu%20dengan%20${encodeURIComponent(doc.name)}.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-nara-600 hover:bg-nara-700 shadow-md transition-all"
+            >
+              Buat Janji dengan Dokter Ini
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @keyframes marqueeDoctorContinuous {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .doctor-marquee-track {
+    display: flex;
+    align-items: stretch;
+    gap: 1.5rem;
+    width: max-content;
+    animation: marqueeDoctorContinuous 30s linear infinite;
+    will-change: transform;
+  }
+
+  .doctor-marquee-track:hover {
+    animation-play-state: paused;
+  }
+</style>

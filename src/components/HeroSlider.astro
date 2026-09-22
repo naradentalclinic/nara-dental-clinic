@@ -1,0 +1,195 @@
+---
+const slides = [
+  {
+    badge: "Klinik Dokter Gigi Surabaya",
+    title: "Senyum Sehat, Rapi, dan Percaya Diri Bersama Nara Dental",
+    subtitle: "Perawatan gigi profesional, aman, dan transparan dengan tim dokter gigi spesialis dan teknologi modern untuk semua permasalahan gigimu.",
+    ctaText: "Buat Janji Temu",
+    ctaLink: "https://wa.me/6281235887859?text=Halo%20Nara%20Dental,%20saya%20ingin%20membuat%20janji%20temu%20pemeriksaan%20gigi.",
+    secondaryCtaText: "Lihat Lokasi Kami",
+    secondaryCtaLink: "https://www.google.com/maps/place/Nara+Dental+Clinic+%7C+Klinik+Dokter+Gigi+Surabaya/data=!4m2!3m1!1s0x0:0x21a873170b10a36d?sa=X&ved=1t:2428&ictx=111",
+    image: "/images/Nara Dental Clinic Surabaya.jpeg",
+  },
+  {
+    badge: "Layanan Keluarga Lengkap",
+    title: "One Stop Dental Solution",
+    subtitle: "Menyediakan semua jenis perawatan untuk segala usia dengan suasana klinik yang hangat, ramah, dan sangat nyaman.",
+    ctaText: "Tanya Perawatan yang Tepat",
+    ctaLink: "https://wa.me/6281235887859?text=Halo%20Nara%20Dental,%20saya%20ingin%20bertanya%20mengenai%20perawatan%20gigi%20yang%20tepat.",
+    secondaryCtaText: "Cek Estimasi Biaya",
+    secondaryCtaLink: "https://wa.me/6281235887859?text=Halo%20Nara%20Dental,%20boleh%20minta%20informasi%20estimasi%20biaya%20dan%20layanan?",
+    image: "/images/Dokter Gigi Surabaya.jpeg",
+  },
+  {
+    badge: "Pendekatan Ramah & Bebas Trauma",
+    title: "Pengalaman Menyenangkan dengan Pendekatan Personal",
+    subtitle: "Menghadirkan pengalaman perawatan gigi yang tenang, aman, serta edukasi pasien yang jelas dan transparan di setiap tindakan.",
+    ctaText: "Chat Kami Sekarang",
+    ctaLink: "https://wa.me/6281235887859?text=Halo%20Nara%20Dental,%20saya%20ingin%20konsultasi%20singkat%20mengenai%20keluhan%20gigi%20saya.",
+    secondaryCtaText: "Lihat Lokasi Kami",
+    secondaryCtaLink: "https://www.google.com/maps/place/Nara+Dental+Clinic+%7C+Klinik+Dokter+Gigi+Surabaya/data=!4m2!3m1!1s0x0:0x21a873170b10a36d?sa=X&ved=1t:2428&ictx=111",
+    image: "/images/Dokter Gigi Terdekat.jpeg",
+  }
+];
+
+const highlights = [
+  { number: "5+ Tahun", label: "Pengalaman Melayani" },
+  { number: "6 Dokter", label: "Spesialis & Umum" },
+  { number: "100%", label: "Steril & Transparan" },
+  { number: "5.0 ★", label: "Rating Ulasan Pasien" }
+];
+---
+
+<section id="beranda" class="relative bg-gradient-to-b from-nara-100/50 via-white to-nara-50 py-8 lg:py-16 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero Slider Container -->
+    <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-nara-900 min-h-[560px] lg:min-h-[600px] flex items-center">
+      
+      {slides.map((slide, index) => (
+        <div
+          class={`hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out flex items-center ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+          data-index={index}
+        >
+          <!-- Background Image with Gradient Overlay -->
+          <img
+            src={slide.image}
+            alt={slide.title}
+            class="absolute inset-0 w-full h-full object-cover object-center opacity-40 mix-blend-overlay scale-105 transition-transform duration-10000"
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-nara-900/95 via-nara-900/80 to-transparent"></div>
+
+          <!-- Slide Content -->
+          <div class="relative z-10 max-w-2xl px-6 sm:px-12 lg:px-16 py-12 text-white">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-nara-500/30 text-nara-200 border border-nara-400/40 backdrop-blur-md mb-6">
+              <span class="w-2 h-2 rounded-full bg-nara-300 animate-pulse"></span>
+              {slide.badge}
+            </span>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white mb-5">
+              {slide.title}
+            </h1>
+
+            <p class="text-base sm:text-lg text-nara-100 font-normal leading-relaxed mb-8">
+              {slide.subtitle}
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4">
+              <a
+                href={slide.ctaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full font-bold text-nara-900 bg-white hover:bg-nara-100 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all text-sm sm:text-base"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-nara-600 fill-current" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.002 3.66 3.745-.983z"/>
+                </svg>
+                {slide.ctaText}
+              </a>
+
+              <a
+                href={slide.secondaryCtaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md transition-all text-sm sm:text-base"
+              >
+                {slide.secondaryCtaText}
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <!-- Slider Controls (Dots & Navigation) -->
+      <div class="absolute bottom-6 right-6 lg:bottom-10 lg:right-12 z-20 flex items-center gap-3">
+        <button id="prev-slide" aria-label="Slide Sebelumnya" class="p-3 rounded-full bg-white/10 hover:bg-white/30 text-white backdrop-blur-md transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="flex items-center gap-2">
+          {slides.map((_, i) => (
+            <button
+              class={`slide-dot w-3 h-3 rounded-full transition-all duration-300 ${i === 0 ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/70'}`}
+              data-to={i}
+              aria-label={`Slide ${i + 1}`}
+            ></button>
+          ))}
+        </div>
+        <button id="next-slide" aria-label="Slide Selanjutnya" class="p-3 rounded-full bg-white/10 hover:bg-white/30 text-white backdrop-blur-md transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Key Stats Highlights Grid -->
+    <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+      {highlights.map((item) => (
+        <div class="bg-white rounded-2xl p-5 border border-nara-100 shadow-soft text-center hover:border-nara-300 transition-all">
+          <p class="text-2xl lg:text-3xl font-extrabold text-nara-600">{item.number}</p>
+          <p class="text-xs sm:text-sm font-medium text-nara-900/70 mt-1">{item.label}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.slide-dot');
+  const prevBtn = document.getElementById('prev-slide');
+  const nextBtn = document.getElementById('next-slide');
+  const total = slides.length;
+
+  function showSlide(index: number) {
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.remove('opacity-0', 'z-0');
+        slide.classList.add('opacity-100', 'z-10');
+      } else {
+        slide.classList.remove('opacity-100', 'z-10');
+        slide.classList.add('opacity-0', 'z-0');
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add('bg-white', 'w-8');
+        dot.classList.remove('bg-white/40');
+      } else {
+        dot.classList.remove('bg-white', 'w-8');
+        dot.classList.add('bg-white/40');
+      }
+    });
+    current = index;
+  }
+
+  function nextSlide() {
+    showSlide((current + 1) % total);
+  }
+
+  function prevSlide() {
+    showSlide((current - 1 + total) % total);
+  }
+
+  if (nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      const target = (e.currentTarget as HTMLElement).dataset.to;
+      if (target !== undefined) {
+        showSlide(parseInt(target, 10));
+      }
+    });
+  });
+
+  // Auto slide every 6 seconds
+  setInterval(nextSlide, 6000);
+</script>

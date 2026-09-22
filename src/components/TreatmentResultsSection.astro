@@ -1,0 +1,127 @@
+---
+const transformations = [
+  {
+    title: "Veneer & Mahkota Gigi (Indirect Veneer)",
+    category: "Veneer Gigi Estetis",
+    image: "/images/Indirect veneer.jpeg",
+    beforeText: "Warna tidak merata & bentuk gigi tidak simetris",
+    afterText: "Senyum lebih simetris, putih alami & tampak sempurna",
+    desc: "Perbaikan bentuk, warna, dan kekuatan gigi menggunakan veneer presisi tinggi untuk senyum harmonis."
+  },
+  {
+    title: "Ortodonti (Behel & Aligner)",
+    category: "Ortodonti Rapih",
+    image: "/images/Orthodenti.jpeg",
+    beforeText: "Susunan gigi berjejal & gigitan tidak sejajar",
+    afterText: "Gigi rapi simetris & fungsi kunyah kembali optimal",
+    desc: "Perawatan merapikan susunan gigi menggunakan behel konvensional maupun aligner transparan."
+  },
+  {
+    title: "Scaling & Pembersihan Karang Gigi",
+    category: "Kebersihan Gigi & Gusi",
+    image: "/images/Scaling.jpeg",
+    beforeText: "Penumpukan karang gigi, plak & noda membandel",
+    afterText: "Gigi & gusi bersih, napas segar bebas infeksi",
+    desc: "Pembersihan karang gigi & plak profesional untuk mencegah peradangan gusi & menjaga napas tetap segar."
+  }
+];
+---
+
+<section id="hasil-perawatan" class="py-16 lg:py-24 bg-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-nara-100 text-nara-700 mb-3">
+        <span class="w-2 h-2 rounded-full bg-nara-600"></span>
+        Transformasi Senyum Pasien
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-nara-900 tracking-tight">
+        Hasil Perawatan (Before – After)
+      </h2>
+      <p class="text-nara-900/75 text-base mt-2">
+        Bukti nyata perubahan estetika dan kesehatan gigi pasien setelah menjalani perawatan profesional di Nara Dental.
+      </p>
+    </div>
+
+    <!-- Transformation Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {transformations.map((item) => (
+        <div class="bg-nara-50/60 rounded-3xl p-6 border border-nara-100 hover:border-nara-300 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer">
+          <div>
+            <!-- Category Tag -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-block px-3 py-1 rounded-full text-xs font-extrabold bg-nara-600 text-white uppercase tracking-wider">
+                {item.category}
+              </span>
+              <span class="text-[11px] font-semibold text-nara-700 bg-nara-100 px-2.5 py-0.5 rounded-full">
+                ✓ Verified Result
+              </span>
+            </div>
+
+            <!-- High-Res Photo Container with Auto-Blur & Hover-to-Reveal -->
+            <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5 bg-nara-100 border border-nara-200">
+              <!-- Blurred Image by default, clear on group hover -->
+              <img
+                src={item.image}
+                alt={item.title}
+                class="w-full h-full object-cover blur-md group-hover:blur-none scale-105 group-hover:scale-100 transition-all duration-500"
+                loading="lazy"
+              />
+
+              <!-- Overlay Prompt when blurred (fades out on hover) -->
+              <div class="absolute inset-0 bg-nara-900/40 backdrop-blur-[2px] flex flex-col items-center justify-center p-4 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
+                <span class="px-3.5 py-2 rounded-full text-xs font-extrabold text-white bg-nara-900/85 shadow-lg border border-white/20 backdrop-blur-md flex items-center gap-2">
+                  <svg class="w-4 h-4 text-nara-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                  </svg>
+                  Klik Untuk Lihat Foto
+                </span>
+                <span class="text-[10px] text-white/80 mt-1 font-medium">Foto Hasil Tindakan Medis</span>
+              </div>
+
+              <!-- Permanent Tag at bottom left -->
+              <div class="absolute bottom-2 left-2 z-10 pointer-events-none">
+                <span class="text-[10px] font-bold text-white uppercase tracking-wider bg-nara-900/70 px-2 py-0.5 rounded-md backdrop-blur-sm">
+                  Before - After
+                </span>
+              </div>
+            </div>
+
+            <!-- Title & Description -->
+            <h3 class="font-extrabold text-lg text-nara-900 mb-2 group-hover:text-nara-700 transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-nara-900/75 leading-relaxed mb-4">
+              {item.desc}
+            </p>
+
+            <!-- Before/After Details Box -->
+            <div class="p-3.5 rounded-2xl bg-white border border-nara-200 space-y-1.5 text-xs">
+              <p><strong class="text-red-600 font-semibold">Sebelum:</strong> {item.beforeText}</p>
+              <p><strong class="text-nara-600 font-bold">Sesudah:</strong> {item.afterText}</p>
+            </div>
+          </div>
+
+          <!-- Bottom Action CTA Button -->
+          <div class="pt-5 mt-5 border-t border-nara-200/80">
+            <a
+              href={`https://wa.me/6281235887859?text=Halo%20Nara%20Dental,%20saya%20tertarik%20konsultasi%20hasil%20perawatan%20${encodeURIComponent(item.title)}.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-nara-600 hover:bg-nara-700 shadow-md transition-all"
+            >
+              <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+              Konsultasi Hasil Serupa via WA
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

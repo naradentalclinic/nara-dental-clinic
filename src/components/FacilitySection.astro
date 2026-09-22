@@ -1,0 +1,75 @@
+---
+const facilities = [
+  {
+    title: "Ruang Perawatan Utama & Dental Chair Modern",
+    category: "Ruang Perawatan",
+    image: "/images/Nara Dental Clinic Surabaya.jpeg",
+    desc: "Dilengkapi dental chair ergonomis dan alat medis steril terkini untuk tindakan nyaman & presisi."
+  },
+  {
+    title: "Ruang Tunggu Klinik Homely & Nyaman",
+    category: "Ruang Tunggu",
+    image: "/images/Dental Clinic Terdekat Surabaya.jpeg",
+    desc: "Suasana hangat, bersih, dilengkapi pendingin udara & minuman gratis untuk kenyamanan keluarga pasien."
+  },
+  {
+    title: "Area Konsultasi Personal Dokter & Pasien",
+    category: "Area Edukasi",
+    image: "/images/Dokter Gigi Surabaya Terdekat.jpeg",
+    desc: "Edukasi visual kondisi rongga mulut dan transparansi rincian estimasi tindakan medis."
+  },
+  {
+    title: "Ruang Tindakan & Protokol Sterilitas Ketat",
+    category: "Area Sterilisasi",
+    image: "/images/Dokter Gigi Surabaya.jpeg",
+    desc: "Peralatan medis melalui 3 tahap sterilisasi standar rumah sakit & autoklaf secara berkala."
+  }
+];
+---
+
+<section id="fasilitas" class="py-16 lg:py-24 bg-nara-50/50 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-nara-100 text-nara-700 mb-3">
+        <span class="w-2 h-2 rounded-full bg-nara-600"></span>
+        Kenyamanan & Kebersihan
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-nara-900 tracking-tight">
+        Fasilitas Modern Nara Dental Clinic
+      </h2>
+      <p class="text-nara-900/75 text-base mt-2">
+        Suasana klinik yang hangat, bersih, dan dilengkapi peralatan medis modern standar rumah sakit.
+      </p>
+    </div>
+
+    <!-- Facility Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {facilities.map((item) => (
+        <div class="bg-white rounded-3xl overflow-hidden border border-nara-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+          <div class="relative h-64 sm:h-72 overflow-hidden bg-nara-100">
+            <img
+              src={item.image}
+              alt={item.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+            />
+            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full text-xs font-bold bg-nara-900/80 text-white backdrop-blur-md">
+              {item.category}
+            </span>
+          </div>
+          <div class="p-7">
+            <h3 class="font-bold text-lg sm:text-xl text-nara-900 mb-2 group-hover:text-nara-700 transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-nara-900/75 leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

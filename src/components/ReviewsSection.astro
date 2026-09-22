@@ -1,0 +1,112 @@
+---
+const reviews = [
+  {
+    name: "Ayu Rahmawati",
+    treatment: "Scaling & Dental Spa",
+    rating: 5,
+    date: "1 Minggu lalu",
+    text: "Pertama kali scaling dan dental spa di Nara Dental, puas banget! Dokternya sangat komunikatif & telaten menjelaskan kondisi gigi detail. Scaling-nya bersih, nyaman tanpa rasa linu berlebihan."
+  },
+  {
+    name: "Dimas Prasetyo",
+    treatment: "Ortodonti (Behel)",
+    rating: 5,
+    date: "2 Minggu lalu",
+    text: "Pelayanan dari admin sampai ke dokter spesialisnya super ramah. Estimasi biaya dijelaskan transparan sebelum tindakan, jadi gak khawatir ada biaya tersembunyi. Hasil kontrol behel selalu memuaskan."
+  },
+  {
+    name: "Siti Nurhaliza",
+    treatment: "Perawatan Gigi Anak",
+    rating: 5,
+    date: "1 Bulan lalu",
+    text: "Anak saya biasanya takut sekali kalau diajak ke dokter gigi, tapi di Nara Dental suasananya homy dan dokternya sabar banget menghadapi anak. Sekarang anak malah senang kalau diajak kontrol rutin!"
+  }
+];
+---
+
+<section id="ulasan" class="py-16 lg:py-20 bg-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header with Google Reviews Badge -->
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between mb-12 gap-8 bg-nara-50 p-8 sm:p-10 rounded-3xl border border-nara-100">
+      <div>
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-white text-nara-700 shadow-xs mb-3">
+          <span class="w-2 h-2 rounded-full bg-nara-600"></span>
+          Ulasan Pasien
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-nara-900 tracking-tight">
+          Apa Kata Pasien Mengenai Nara Dental?
+        </h2>
+        <p class="text-nara-900/75 text-base mt-2">
+          Kepercayaan & kenyamanan pasien adalah kebahagiaan utama kami di setiap tindakan.
+        </p>
+      </div>
+
+      <!-- Google Rating Stat Card with Vector Google Logo -->
+      <div class="bg-white p-6 rounded-2xl border border-nara-200 shadow-sm flex items-center gap-5 shrink-0">
+        <div class="w-14 h-14 rounded-2xl bg-nara-600 text-white flex items-center justify-center font-extrabold text-2xl shadow-md">
+          <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+            <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 15.987 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-1 text-amber-400 text-lg font-bold">
+            ★★★★★ <span class="text-nara-900 text-base font-extrabold ml-1">5.0 / 5.0</span>
+          </div>
+          <p class="text-xs font-bold text-nara-900/80 mt-0.5">Ulasan Resmi Google Review</p>
+          <p class="text-[11px] text-nara-900/60">Berdasarkan kepuasan pasien klinik</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials Grid (1 Row of 3 Cards) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {reviews.map((rev) => (
+        <div class="bg-nara-50/50 rounded-3xl p-7 border border-nara-100 hover:border-nara-300 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <!-- Stars & Verified Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-amber-400 text-sm tracking-widest">
+                {"★".repeat(rev.rating)}
+              </div>
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-nara-700 bg-nara-100 px-2.5 py-0.5 rounded-full">
+                <svg class="w-3 h-3 text-nara-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                Verified Patient
+              </span>
+            </div>
+
+            <!-- Review Text -->
+            <p class="text-xs sm:text-sm text-nara-900/85 leading-relaxed italic mb-6">
+              "{rev.text}"
+            </p>
+          </div>
+
+          <!-- Author Info -->
+          <div class="pt-4 border-t border-nara-100/80 flex items-center justify-between">
+            <div>
+              <p class="font-bold text-sm text-nara-900">{rev.name}</p>
+              <p class="text-[11px] font-medium text-nara-600">{rev.treatment}</p>
+            </div>
+            <span class="text-[11px] text-nara-900/50">{rev.date}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA Below Reviews -->
+    <div class="mt-10 text-center">
+      <a
+        href="https://wa.me/6281235887859?text=Halo%20Nara%20Dental,%20saya%20ingin%20jadwalkan%20pemeriksaan%20dan%20perawatan."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-white bg-nara-600 hover:bg-nara-700 shadow-lg hover:shadow-xl transition-all text-sm"
+      >
+        Rasakan Pengalaman Nyaman di Nara Dental
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>

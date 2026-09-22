@@ -1,0 +1,172 @@
+---
+const steps = [
+  {
+    step: "01",
+    title: "Reservasi via WhatsApp",
+    desc: "Klik tombol reservasi untuk terhubung langsung dengan tim admin Nara Dental via WhatsApp.",
+    icon: "message-circle"
+  },
+  {
+    step: "02",
+    title: "Kirim Format Reservasi",
+    desc: "Isi informasi singkat mencakup nama, usia, keluhan gigi, dan pilihan jadwal kunjungan.",
+    icon: "file-text"
+  },
+  {
+    step: "03",
+    title: "Konfirmasi Reservasi",
+    desc: "Admin kami akan mengonfirmasi ketersediaan dokter, jam praktek, dan rute lokasi klinik.",
+    icon: "check-square"
+  },
+  {
+    step: "04",
+    title: "Konsultasi & Perawatan",
+    desc: "Datang sesuai jadwal, nikmati suasana klinik yang tenang, konsultasi & tindakan medis transparan.",
+    icon: "smile"
+  }
+];
+---
+
+<section id="booking" class="py-16 lg:py-24 bg-nara-900 text-white relative overflow-hidden">
+  
+  <!-- Background Glow -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-nara-500/20 rounded-full filter blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-nara-600/20 rounded-full filter blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-nara-800 text-nara-200 border border-nara-700 mb-3">
+        <span class="w-2 h-2 rounded-full bg-nara-400"></span>
+        Alur Reservasi Mudah
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+        4 Langkah Mudah Membuat Janji Temu
+      </h2>
+      <p class="text-nara-100/80 text-base mt-3">
+        Proses cepat tanpa antre panjang. Jadwalkan kunjungan Anda bersama tim dokter kami sekarang.
+      </p>
+    </div>
+
+    <!-- 4 Steps Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      {steps.map((s) => (
+        <div class="bg-nara-800/80 rounded-3xl p-7 border border-nara-700/60 relative flex flex-col justify-between group hover:border-nara-400 transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-3xl font-extrabold text-nara-400 font-mono">{s.step}</span>
+              <div class="w-10 h-10 rounded-2xl bg-nara-700/60 text-nara-200 flex items-center justify-center font-bold">
+                ✓
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-3 group-hover:text-nara-300 transition-colors">
+              {s.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-nara-100/75 leading-relaxed">
+              {s.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Interactive Interactive WhatsApp Form Generator -->
+    <div class="max-w-3xl mx-auto bg-white text-nara-900 rounded-3xl p-8 sm:p-10 shadow-2xl border border-nara-100">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-bold text-nara-900">Format Quick Booking WhatsApp</h3>
+        <p class="text-xs sm:text-sm text-nara-900/70 mt-1">
+          Lengkapi data di bawah ini untuk langsung terhubung dengan admin kami via WhatsApp:
+        </p>
+      </div>
+
+      <form id="wa-booking-form" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="booking-name" class="block text-xs font-bold uppercase text-nara-900/80 mb-1">Nama Lengkap</label>
+            <input
+              type="text"
+              id="booking-name"
+              placeholder="Contoh: Budi Prasetyo"
+              class="w-full px-4 py-3 rounded-xl border border-nara-200 focus:outline-none focus:ring-2 focus:ring-nara-500 text-sm"
+              required
+            />
+          </div>
+          <div>
+            <label for="booking-age" class="block text-xs font-bold uppercase text-nara-900/80 mb-1">Usia</label>
+            <input
+              type="text"
+              id="booking-age"
+              placeholder="Contoh: 28 Tahun"
+              class="w-full px-4 py-3 rounded-xl border border-nara-200 focus:outline-none focus:ring-2 focus:ring-nara-500 text-sm"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="booking-service" class="block text-xs font-bold uppercase text-nara-900/80 mb-1">Layanan / Keluhan</label>
+            <select
+              id="booking-service"
+              class="w-full px-4 py-3 rounded-xl border border-nara-200 focus:outline-none focus:ring-2 focus:ring-nara-500 text-sm bg-white"
+            >
+              <option value="Konsultasi Gigi Umum">Konsultasi Gigi Umum</option>
+              <option value="Scaling & Dental Spa">Scaling & Dental Spa</option>
+              <option value="Behel / Ortodonti">Behel / Ortodonti</option>
+              <option value="Veneer & Crown Gigi">Veneer & Crown Gigi</option>
+              <option value="Perawatan Saluran Akar">Perawatan Saluran Akar</option>
+              <option value="Gigi Palsu">Gigi Palsu</option>
+              <option value="Perawatan Gigi Anak">Perawatan Gigi Anak</option>
+              <option value="Cabut Gigi / Odontektomi">Cabut Gigi / Odontektomi</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div>
+            <label for="booking-date" class="block text-xs font-bold uppercase text-nara-900/80 mb-1">Rencana Tanggal Kunjungan</label>
+            <input
+              type="date"
+              id="booking-date"
+              class="w-full px-4 py-3 rounded-xl border border-nara-200 focus:outline-none focus:ring-2 focus:ring-nara-500 text-sm bg-white"
+            />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full py-4 rounded-2xl font-bold text-white bg-nara-600 hover:bg-nara-700 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2.5 text-base mt-6"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.002 3.66 3.745-.983z"/>
+          </svg>
+          Kirim Form Reservasi Ke WhatsApp
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('wa-booking-form') as HTMLFormElement;
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = (document.getElementById('booking-name') as HTMLInputElement).value || '-';
+      const age = (document.getElementById('booking-age') as HTMLInputElement).value || '-';
+      const service = (document.getElementById('booking-service') as HTMLSelectElement).value;
+      const date = (document.getElementById('booking-date') as HTMLInputElement).value || 'Menyesuaikan';
+
+      const message = `Halo Nara Dental, saya ingin reservasi jadwal perawatan.\n\n` +
+        `• Nama: ${name}\n` +
+        `• Usia: ${age}\n` +
+        `• Keluhan / Layanan: ${service}\n` +
+        `• Jadwal Kunjungan: ${date}\n\n` +
+        `Mohon informasinya, terima kasih!`;
+
+      const targetUrl = `https://wa.me/6281235887859?text=${encodeURIComponent(message)}`;
+      window.open(targetUrl, '_blank');
+    });
+  }
+</script>

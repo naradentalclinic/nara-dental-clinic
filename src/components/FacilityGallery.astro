@@ -1,0 +1,184 @@
+---
+const facilities = [
+  {
+    title: "Ruang Perawatan Utama & Dental Chair Modern",
+    category: "Ruang Perawatan",
+    image: "/images/Nara Dental Clinic Surabaya.jpeg",
+    desc: "Dilengkapi dental chair ergonomis dan alat medis steril terkini untuk tindakan nyaman."
+  },
+  {
+    title: "Ruang Tunggu Klinik Homely & Nyaman",
+    category: "Ruang Tunggu",
+    image: "/images/Dental Clinic Terdekat Surabaya.jpeg",
+    desc: "Suasana hangat, bersih, dilengkapi pendingin udara & minuman gratis untuk ketenangan pasien."
+  },
+  {
+    title: "Konsultasi Personal Dokter & Pasien",
+    category: "Area Edukasi",
+    image: "/images/Dokter Gigi Surabaya Terdekat.jpeg",
+    desc: "Edukasi visual kondisi rongga mulut dan transparansi rincian estimasi tindakan."
+  },
+  {
+    title: "Ruang Tindakan & Protokol Sterilitas Ketat",
+    category: "Area Tindakan",
+    image: "/images/Dokter Gigi Surabaya.jpeg",
+    desc: "Peralatan medis melalui 3 tahap sterilisasi standar rumah sakit & autoklaf."
+  }
+];
+
+const transformations = [
+  {
+    title: "Pemasangan Veneer Estetis Senyum",
+    category: "Veneer Gigi",
+    beforeText: "Warna tidak merata & bentuk tidak simetris",
+    afterText: "Senyum lebih simetris, putih alami & percaya diri",
+    image: "/images/Dokter Gigi Terdekat.jpeg"
+  },
+  {
+    title: "Perawatan Ortodonti (Behel Rapih)",
+    category: "Ortodonti",
+    beforeText: "Gigi berjejal & gingsul berlebih",
+    afterText: "Susunan gigi rapi dan fungsi gigitan optimal",
+    image: "/images/Nara Dental Clinic Surabaya Terdekat.jpeg"
+  },
+  {
+    title: "Scaling & Pembersihan Karang Gigi",
+    category: "Scaling",
+    beforeText: "Plak & karang gigi menumpuk",
+    afterText: "Gigi & gusi bersih segar bebas inflamasi",
+    image: "/images/Dental Clinic Terdekat Surabaya.jpeg"
+  }
+];
+---
+
+<section id="galeri" class="py-16 lg:py-24 bg-nara-50/40 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-nara-100 text-nara-700 mb-3">
+        <span class="w-2 h-2 rounded-full bg-nara-600"></span>
+        Suasana & Hasil Perawatan
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-nara-900 tracking-tight">
+        Galeri Klinik & Transformasi Senyum Pasien
+      </h2>
+      <p class="text-nara-900/75 text-base mt-2">
+        Lihat kenyamanan suasana klinik kami dan bukti nyata senyum indah pasien setelah perawatan di Nara Dental.
+      </p>
+
+      <!-- Toggle Gallery View -->
+      <div class="inline-flex p-1.5 rounded-full bg-white border border-nara-200 mt-8 shadow-sm" id="gallery-tabs">
+        <button
+          class="gallery-tab-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-nara-600 text-white shadow-md transition-all"
+          data-tab="facilities"
+        >
+          Fasilitas Klinik
+        </button>
+        <button
+          class="gallery-tab-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold text-nara-900 hover:bg-nara-100 transition-all"
+          data-tab="transformations"
+        >
+          Hasil Perawatan (Before-After)
+        </button>
+      </div>
+    </div>
+
+    <!-- Facilities Tab Content -->
+    <div id="tab-facilities" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {facilities.map((item) => (
+        <div class="bg-white rounded-3xl overflow-hidden border border-nara-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src={item.image}
+              alt={item.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-nara-900/80 text-white backdrop-blur-md">
+              {item.category}
+            </span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-lg text-nara-900 mb-2">
+              {item.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-nara-900/75 leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Transformations Tab Content -->
+    <div id="tab-transformations" class="hidden grid grid-cols-1 md:grid-cols-3 gap-8">
+      {transformations.map((item) => (
+        <div class="bg-white rounded-3xl p-6 border border-nara-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-nara-100 text-nara-700 mb-4">
+              {item.category}
+            </span>
+            <div class="relative h-48 rounded-2xl overflow-hidden mb-4 bg-nara-200">
+              <img
+                src={item.image}
+                alt={item.title}
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-nara-900/70 via-transparent to-transparent flex items-end p-4">
+                <span class="text-xs font-bold text-white uppercase tracking-wider">Hasil Perawatan Pasien</span>
+              </div>
+            </div>
+            <h3 class="font-bold text-base text-nara-900 mb-2">
+              {item.title}
+            </h3>
+            <div class="space-y-1.5 text-xs text-nara-900/80">
+              <p><strong class="text-red-600 font-semibold">Sebelum:</strong> {item.beforeText}</p>
+              <p><strong class="text-nara-600 font-semibold">Sesudah:</strong> {item.afterText}</p>
+            </div>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-nara-100">
+            <a
+              href={`https://wa.me/6281235887859?text=Halo%20Nara%20Dental,%20saya%20tertarik%20dengan%20hasil%20perawatan%20${encodeURIComponent(item.title)}.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-1.5 w-full py-2 rounded-xl text-xs font-bold text-nara-700 bg-nara-50 hover:bg-nara-600 hover:text-white transition-all"
+            >
+              Konsultasi Hasil Serupa
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const tabBtns = document.querySelectorAll('.gallery-tab-btn');
+  const tabFacilities = document.getElementById('tab-facilities');
+  const tabTransformations = document.getElementById('tab-transformations');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLElement;
+      const tab = target.dataset.tab;
+
+      tabBtns.forEach(b => {
+        b.classList.remove('bg-nara-600', 'text-white', 'shadow-md');
+        b.classList.add('text-nara-900', 'hover:bg-nara-100');
+      });
+
+      target.classList.remove('text-nara-900', 'hover:bg-nara-100');
+      target.classList.add('bg-nara-600', 'text-white', 'shadow-md');
+
+      if (tab === 'facilities' && tabFacilities && tabTransformations) {
+        tabFacilities.classList.remove('hidden');
+        tabTransformations.classList.add('hidden');
+      } else if (tab === 'transformations' && tabFacilities && tabTransformations) {
+        tabFacilities.classList.add('hidden');
+        tabTransformations.classList.remove('hidden');
+      }
+    });
+  });
+</script>

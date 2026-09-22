@@ -1,0 +1,87 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Nara Dental Clinic Surabaya | Klinik Dokter Gigi Spesialis & Umum",
+  description = "Klinik dokter gigi terpercaya di Surabaya. Memiliki tim dokter spesialis lengkap, peralatan modern, dan suasana homy yang nyaman. Your smiles matters!"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#808F72" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Nara Dental Care, Nara Dental Clinic, Dokter Gigi Surabaya, Klinik Gigi Gubeng, Behel Surabaya, Scaling Gigi Surabaya, Veneer Gigi, Dokter Gigi Anak Surabaya" />
+    <meta name="author" content="Nara Dental Care" />
+
+    <!-- Open Graph / WhatsApp / Facebook / Social Share Preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://naradental.id/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/og-share-logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/images/og-share-logo.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Global Styles -->
+    <style is:global>
+      :root {
+        --color-sage-primary: #808F72;
+        --color-sage-light: #E7EEE6;
+        --color-sage-accent: #8AA58A;
+        --color-sage-dark: #1F2923;
+      }
+      
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: #2D3A2F;
+        background-color: #F8FAF7;
+        overflow-x: hidden;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F5F8F4;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #A8C2A8;
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #808F72;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col antialiased">
+    <slot />
+  </body>
+</html>
